@@ -1,0 +1,45 @@
+MIERLICH DANIEL 323 CB
+			 In English
+	    Homework 1 - Implement a prefix ast
+Implement an assembly language program that evaluates a prefixed mathematical
+expression and then displays the result at stdout. The numbers that appear in
+the expression are integers with a sign, on 32 bits, and the operations that
+apply to them are: +, -, /, *. The prefixed expression will be received in the
+form of an AST (abstract syntax tree) following the call of an external
+function - getAST (). Reading will be done by the getAST () function on
+the keyboard.
+
+			In Romanian
+Să se implementeze un program în limbaj de asamblare care efectuează
+evaluarea unei expresii matematice prefixate și apoi afișează rezultatul
+la stdout. Numerele ce apar în expresie sunt numere întregi cu semn, pe 32
+de biți, iar operațiile ce se aplică lor sunt: +, -, /, *. Expresia prefixată
+va fi primita sub forma unui AST (abstract syntax tree) în urma apelului
+unei funcții externe - getAST(). Citirea se va face de catre fucția getAST()
+de la tastatură.
+
+Functia getAST construieste arborele. Pun mai intai pe stiva adresa
+rout-ului si apelez functia rezolva, care parcurge arborele si face
+evaluarea. Cand epelez functia pe stiva se pune mai intai adresa de
+return si dupa noul ebp, astfel rout-ul care a fost pus mai inainte
+se afla la adresa ebp+8. Mut in ebx, [ebp + 8] astfel in ebx se
+afla nodul care a fost pus mai inaite pe stiva, se verifica
+existenta copilului stang, daca nu e stangul nu e nici dreptul.
+	Daca in urma instructiunii test se afla ca nodul nu are copil
+stang => nodul curent este frunza si se sare la sectiunea numar
+care pune in edi stringul de cifre, si se apeleza atoi. Atoi se
+apeleaza doar pentru frunze si daca primul caracter este "-" inseamna
+ca este numar negativ, in acest caz incrementez edi cu 1 cum ar functia
+fac escape la "-" si la rezultat fac Complement fata de 2. Cand se iese
+din atoi rezultatul este stocat in eax, si se pune rezultatul la
+adresa [ebp + 8] adica in locul ultimului nod care a fost pus pe
+stiva. Similar se apeleaza si pentru copilul drept care tot pune
+rezultatul pe stiva in locul ultimului nod adaugat. Dupa ce sa
+parcurs si stanga si dreapta se fac 2 pop-uri in 2 registre, ca sa
+vad ce operaie trebuie sa fac cu acesti 2 registri iau parintele de la
+adresa [ebp+8] si diferentiez pana obtin in ecx numarul care si este
+operatia, ma uit ce opertie este si efectuez, la urma rezultatul il
+pun la adresa [ebp + 8]. Cand se termina functia rezolv pe stiva am
+doar rezultatul care trebuie afisat, fac pop si afisez.
+Mai departe se apeleaza functia freeAST care elbereaza memoria.
+
