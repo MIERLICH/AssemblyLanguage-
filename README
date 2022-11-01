@@ -1,6 +1,6 @@
-MIERLICH DANIEL 323 CB
+
 			 In English
-	    Homework 1 - Implement a prefix ast
+	   	 Implement a prefix ast
 Implement an assembly language program that evaluates a prefixed mathematical
 expression and then displays the result at stdout. The numbers that appear in
 the expression are integers with a sign, on 32 bits, and the operations that
@@ -10,7 +10,7 @@ function - getAST (). Reading will be done by the getAST () function on
 the keyboard.
 
 			In Romanian
-Să se implementeze un program în limbaj de asamblare care efectuează
+Am implementat un program în limbaj de asamblare care efectuează
 evaluarea unei expresii matematice prefixate și apoi afișează rezultatul
 la stdout. Numerele ce apar în expresie sunt numere întregi cu semn, pe 32
 de biți, iar operațiile ce se aplică lor sunt: +, -, /, *. Expresia prefixată
